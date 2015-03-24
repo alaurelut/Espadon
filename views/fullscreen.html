@@ -1,0 +1,118 @@
+<div ng-switch="isLoading">
+
+    <!-- BEGIN: Loading View. -->
+    <p ng-switch-when="true">
+        <img src="img/loader.gif" style="margin:0 auto">
+    </p>
+    <!-- END: Loading View. -->
+
+    <!-- BEGIN: Results View. -->
+    <div
+        ng-switch-when="false"
+        ng-switch="isSuccessful">
+
+        <p ng-switch-when="true">
+
+            <div ng-if="!showInfo">
+              <div ng-repeat="src in photo" resize ng-style="{'background':'url({{src}}) no-repeat center center','background-size':'contain'}"></div>
+            </div>
+
+        </p>
+
+        <p ng-switch-when="false">
+
+            <strong>Oops</strong>: One of your images failed to load :(
+
+        </p>
+
+    </div>
+    <!-- END: Results View. -->
+
+</div>
+
+
+
+<link rel="stylesheet" type="text/css" href="css/fullScreen.css">
+
+<div class="info" ng-if="showInfo == false" ng-click="displayInfo()">i</div>
+<div class="info" ng-if="showInfo == true" ng-click="displayInfo()">X</div>
+
+<div ng-if="showInfo">
+    
+    <p>{{infos.owner.username}}</p>
+    Link to Flickr :<a ng-href="{{url}}">
+      {{infos.title._content}}
+    </a>
+    <p>{{infos.description._content}}</p>
+    <p>Taken on {{infos.dates.taken }}</p>
+
+    <button class="report" ng-click="">Report this picture</button>
+    <a ng-href="{{url}}">
+      <span>{{infos.views}} Views</span>
+      <span>{{faves}} Favorites</span>
+      <span>{{infos.comments._content}} Comments</span>
+    </a>
+
+    <p>{{locality}}</p>
+    <map center="[{{mapLatitude}}, {{mapLongitude}}]" zoom="{{mapZoom}}" id="maps"  >
+      <marker
+          position="[{{mapLatitude}}, {{mapLongitude}}]"
+          title="{{locality}}"
+          draggable="false"
+          visible="true">
+        </marker>
+    </map>
+
+     </map>
+  
+
+    <p>{{exifs.camera}}</p>
+    <p>{{exposure}}</p>
+
+    <p>Aperture : {{Aperture}}</p>
+    <p>Exposure : {{Exposure}}</p>
+    <p>Flash : {{Flash}}</p>
+    <p>FocalLength : {{FocalLength}}</p>
+    <p>ISO : {{ISO}}</p>
+
+    <button class="showExif" ng-click="showExif = true" ng-show="!showExif">Montrer toutes les données EXIF</button>
+    <button class="showExif" ng-click="showExif = false" ng-show="showExif">Hide Exif</button>
+
+    <ul class="exifs" ng-show="showExif">
+        <li ng-repeat="exif in exifs.exif">
+          {{exif.label}} - {{exif.raw._content}}
+        </li>
+
+    </ul>
+
+</div>
+
+
+<div class="container">
+
+    <div class="traitP1"></div>
+    <div class="carreP1"></div>
+    <div class="carreP2"></div>
+    <div class="carreP3"></div>
+    <div class="carreP4"></div>
+    <div class="carreP5"></div>
+    <div class="carreP6"></div>
+    <div class="carreP7"></div>
+    <div class="carreP8"></div>
+    <div class="traitP2"></div>
+
+    <div class="description">
+        <ul>
+            <li class="left">Mahnattan, yellow taxi</li>
+            <li class="right">Central par, squirrels</li>
+        </ul>
+        <h1>Town from above in new york city</h1>
+    </div>
+
+</div>
+
+
+<style type="text/css">
+body{margin:0;}
+#maps { height: 400px; width: 400px }
+</style>

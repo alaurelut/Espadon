@@ -1,0 +1,160 @@
+<link rel="stylesheet" type="text/css" href="css/backOffice.css">
+
+<div class="container">
+
+	<div class="sidebar">
+
+		<div class="logo">
+		</div>
+
+		<ul class="sideMenu" ng-repeat="espace in espaces">
+			<li>
+				<div ng-click="changeCurrentSpace(espace, espace.name)" class="title actif">{{espace.name}}</div>
+				<ul class="submenu">
+					<li class="actif"><a href="#">Change space's name</a></li>
+					<li><a href="#">Change About page</a></li>
+					<li><a href="#">Change your albums</a></li>
+					<li><a href="#">Change your colors</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+
+	<div class="content">
+
+		<div ng-repeat="espace in espaces">
+
+			<div ng-if="currentSpaceName == espace.name">
+
+				<div class="header">
+					<h2>{{espace.name}}</h2>
+				</div>
+
+				<div class="padded">
+
+					<div class="spaceName">
+						<h3>Change your space's name</h3>
+						<div class="input">
+							
+							<img src="img/backOffice/space_name.png" class="formIcon">  
+							<div class="halfInput">
+							    <div class="group">
+									<input type="text" ng-model="espace.name" required>
+									<span class="highlight"></span>
+									<span class="bar"></span>
+									<label>Space Name</label>
+								</div>
+						    </div>
+						</div>
+
+						<div class="clear"></div>
+					</div>
+
+					<div class="aboutPage">
+
+						<h3>Change your about page</h3>
+
+						<div class="input">
+							
+							<img src="img/backOffice/space_description.png" class="formIcon">
+
+							<div class="halfInput">
+							    <div class="group">
+									<textarea ng-model="espace.description" required></textarea>
+									<span class="highlight"></span>
+									<span class="bar"></span>
+									<label>Description</label>
+								</div>
+						    </div>
+
+						</div>
+
+						<div class="clear"></div>
+
+						<h4>Add people</h4>
+
+						<div ng-repeat="(k,v) in espace.partners" class="partnerBlock">
+
+								<div class="add_partner_photo" style="background-image:url({{espace.partners[$index].photo}})"><span ng-if="!espace.partners[$index].photo">?</span></div>
+
+								<div class="halfInput">
+
+										<div class="group">
+											<input type="text" ng-model='espace.partners[$index]["name"]' required>
+											<span class="highlight"></span>
+											<span class="bar"></span>
+											<label>Name</label>
+										</div>
+
+										<div class="group">
+											<input type="text" ng-model='espace.partners[$index]["function"]' required>
+											<span class="highlight"></span>
+											<span class="bar"></span>
+											<label>Activity</label>
+										</div>
+
+										<div class="group">
+											<input type="text" ng-model='espace.partners[$index]["username"]' ng-blur='change(espace.partners[$index])' required>
+											<span class="highlight"></span>
+											<span class="bar"></span>
+											<label>Flickr username</label>
+										</div>
+
+								</div>
+
+								<div class="clear"></div>
+							</div>
+
+							<div ng-show="espace.partners.length < 5" ng-click="add_people()">More people</div>
+							<div ng-show="espace.partners.length > 1" ng-click="delete_people()">Less people</div>
+
+					</div>
+
+						<h3>Change your collections and albums</h3>
+
+						<div class="halfBloc"  id="separator2">
+						<h2>Flickr Account</h2>
+
+						<div ng-repeat="collection in espace.collections">
+
+			            <div ng-click="openCollection(collection.id,collection.title)" ng-class="{active : collection.active}" class="collection">{{collection.title}}</div>
+				              <div ng-show="openedCollection.title == collection.title" ng-repeat="album in collection.set">
+				              	<div class="album" ng-class="{active : album.active}" ng-click="pushAlbum(album.id,album.title, album, collection)">{{album.title}}</div>
+				              </div>
+
+				              <div class="clear"></div>
+			        	</div>
+					</div>
+
+
+					<div class="halfBloc" >
+						<h2>{{space.name}}</h2>
+
+						<div ng-repeat="collection in espace.collections">
+
+				            <div class="collection">{{collection.title}}</div>
+
+					              <div ng-show="openedCollection.title == collection.title" ng-repeat="album in collection.albums">
+					              	<div class="album">{{album.title}}</div>
+					              </div>
+
+					              <div class="clear"></div>
+				        	</div>
+						</div>
+
+					<div class="clear"></div>
+				</div>
+
+						<h3>Change your colors</h3>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+</div>
+
+
+<!-- {{espaces | json}}
+ -->

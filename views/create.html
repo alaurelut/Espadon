@@ -1,0 +1,187 @@
+<link rel="stylesheet" type="text/css" href="css/backOffice.css">
+
+<form name="spaceForm" class="formulaire">
+	<div id="step1" ng-show="step == 1">
+		<h1>Step 1 - Create your about</h1>
+
+		<div class="step_line">
+			<hr><div class="step_round step_round_active"></div><div class="step_round"></div><div class="step_round"></div><hr>
+			<div class="clear"></div>
+			<div class="headerInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sapien tellus, pharetra eget dolor et.</div>
+		</div>
+		
+
+		<div class="halfBloc">
+			<h2>Name your space :</h2>
+
+
+			<div class="input">
+				
+				<img src="img/backOffice/space_name.png" class="formIcon">  
+				<div class="halfInput">
+				    <div class="group">
+						<input type="text" ng-model="espace.name" required>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Space Name</label>
+					</div>
+			    </div>
+			</div>
+
+			<div class="clear"></div>
+
+			<div class="input">
+				
+				<img src="img/backOffice/space_description.png" class="formIcon">
+
+				<div class="halfInput">
+				    <div class="group">
+						<textarea ng-model="espace.description" required></textarea>
+						<span class="highlight"></span>
+						<span class="bar"></span>
+						<label>Description</label>
+					</div>
+			    </div>
+
+			</div>
+
+		</div>
+
+
+		<div class="halfBloc"  id="separator">
+			<h2>Add people :</h2>
+
+			<div ng-repeat="(k,v) in espace.partners" class="partnerBlock">
+
+				<div class="add_partner_photo" style="background-image:url({{espace.partners[$index].photo}})"><span ng-if="!espace.partners[$index].photo">?</span></div>
+
+				<div class="halfInput">
+
+						<div class="group">
+							<input type="text" ng-model='espace.partners[$index]["name"]' required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Name</label>
+						</div>
+
+						<div class="group">
+							<input type="text" ng-model='espace.partners[$index]["activity"]' required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Activity</label>
+						</div>
+
+						<div class="group">
+							<input type="text" ng-model='espace.partners[$index]["username"]' ng-blur='change(espace.partners[$index])' required>
+							<span class="highlight"></span>
+							<span class="bar"></span>
+							<label>Flickr Username</label>
+						</div>
+
+				</div>
+
+				<div class="clear"></div>
+			</div>
+
+
+
+			<div ng-show="espace.partners.length < 5" ng-click="add_people()">More people</div>
+			<div ng-show="espace.partners.length > 1" ng-click="delete_people()">Less people</div>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div id="step2" ng-show="step == 2">
+		<h1>Step 2 - Add your albums</h1>
+		<div class="step_line">
+			<hr><div class="step_round"></div><div class="step_round step_round_active"></div><div class="step_round"></div><hr>
+			<div class="clear"></div>
+			<div class="headerInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sapien tellus, pharetra eget dolor et.</div>
+		</div>
+		
+
+		<div class="halfBloc"  id="separator2">
+			<h2>Flickr Account</h2>
+
+			<div ng-repeat="collection in collections">
+
+            <div ng-click="openCollection(collection.id,collection.title)" ng-class="{active : collection.active}" class="collection">{{collection.title}}</div>
+
+	              <div ng-show="openedCollection.title == collection.title" ng-repeat="album in collection.set">
+	              	<div class="album" ng-class="{active : album.active}" ng-click="pushAlbum(album.id,album.title, album, collection)">{{album.title}}</div>
+	              </div>
+
+
+
+	              <div class="clear"></div>
+
+        	</div>
+		</div>
+
+
+		<div class="halfBloc" >
+			<h2>{{space.name}}</h2>
+
+			<div ng-repeat="collection in espace.collections">
+
+	            <div class="collection">{{collection.title}}</div>
+
+		              <div ng-show="openedCollection.title == collection.title" ng-repeat="album in collection.albums">
+		              	<div class="album">{{album.title}}</div>
+		              </div>
+
+		              <div class="clear"></div>
+
+	        	</div>
+			</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div id="step3" ng-show="step == 3">
+		<h1>Step 3 - Change your colors</h1>
+		<div class="step_line">
+			<hr><div class="step_round"></div><div class="step_round"></div><div class="step_round step_round_active"></div><hr>
+			<div class="clear"></div>
+			<div class="headerInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sapien tellus, pharetra eget dolor et.</div>
+		</div>
+		
+
+		<div class="halfBloc" id="separator2">
+			<div class="collection" ng-click='openColorBlock(espace)' style="background:{{espace.color}}" >{{espace.name}}</div>
+			<div ng-repeat="collection in espace.collections" >
+				<div class="album" ng-click='openColorBlock(collection)' style="background:{{collection.color}}">{{collection.title}}</div>
+		    </div>
+		</div>
+
+
+		<div class="halfBloc" >
+			<div class="colorsBlock" ng-show='colorBlock'>
+				<div ng-click="changeColor('#2b337a')" style="background-color:#2b337a" class="colorBlock"></div>
+				<div ng-click="changeColor('#1080a2')" style="background-color:#1080a2" class="colorBlock"></div>
+				<div ng-click="changeColor('#188c44')" style="background-color:#188c44" class="colorBlock"></div>
+				<div ng-click="changeColor('#6ea241')" style="background-color:#6ea241" class="colorBlock"></div>
+				<div ng-click="changeColor('#cccb2b')" style="background-color:#cccb2b" class="colorBlock"></div>
+				<div ng-click="changeColor('#ce5028')" style="background-color:#ce5028" class="colorBlock"></div>
+				<div ng-click="changeColor('#cc2128')" style="background-color:#cc2128" class="colorBlock"></div>
+				<div ng-click="changeColor('#b31f3b')" style="background-color:#b31f3b" class="colorBlock"></div>
+				<div ng-click="changeColor('#8a298c')" style="background-color:#8a298c" class="colorBlock"></div>
+			</div>
+
+			<div class="clear"></div>
+
+			<p style="text-align:left">Choose your own color</p>
+		</div>
+
+		<div class="clear"></div>
+	</div>
+
+	<div class="formButton" ng-click="step = step+1" ng-show="step < 3">Next step</div>
+	<!-- <div class="formButton" ng-show="step != 1" ng-click="step = step-1">Previous step</div> -->
+
+	<div class="formButton" ng-if="step==3" ng-click="create_space(espace)">Create your space</div>
+
+</form>
+
+{{espace |json}}

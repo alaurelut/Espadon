@@ -1,0 +1,232 @@
+.menu {
+	position: fixed;
+	bottom: 40px;
+	right: 80px;
+}
+#menuControl {
+	height: 50px;
+	width: 50px;
+	-ms-transform: rotate(45deg); /* Internet Explorer */
+    -moz-transform: rotate(45deg); /* Firefox */
+    -webkit-transform: rotate(45deg); /* Safari et Chrome */
+    -o-transform: rotate(45deg); /* Opera */
+    border: 1px solid #d7d8d8;
+	background-color: #fff;
+	padding: 0;
+	cursor: pointer;
+}
+i {
+	display: inline-block;
+}
+.notOpened .ico-close {
+	background: url("../img/ico-open.jpg");
+	width: 50px;
+	height: 50px;
+}
+#menuControl:hover {
+	background-color: #666565;	
+}
+.notOpened:hover .ico-close {
+	background: url("../img/ico-open-whi.png");	
+}
+.opened .ico-close {
+	background: url("../img/ico-close.jpg");
+	width: 29px;
+	height: 29px;
+}
+.opened:hover .ico-close {
+	background: url("../img/ico-close-whi.png");	
+}
+.menu-link a {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	-ms-transform: rotate(45deg); /* Internet Explorer */
+    -moz-transform: rotate(45deg); /* Firefox */
+    -webkit-transform: rotate(45deg); /* Safari et Chrome */
+    -o-transform: rotate(45deg); /* Opera */
+    border: 1px solid #d7d8d8;
+	background-color: #fff;
+	padding: 0;
+}
+.menu-link a:hover {
+	background-color: #666565;	
+	
+}
+.bo-link {
+	bottom: 40px;
+	left: 39px;
+	opacity: 0;
+}
+.anim-1 {
+	opacity: 1;
+	-webkit-animation: myfirst 0.3s; 
+    animation: myfirst 0.3s;
+}
+@-webkit-keyframes myfirst {
+    from {opacity: 0;
+    	left: 0;
+    	bottom: 0;
+    	-webkit-transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-45deg);}
+    to {opacity: 1;
+	left: 39px;
+	bottom: 40px;
+	-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+}
+
+.fs-link {
+	bottom: 80px;
+	opacity: 0;
+}
+.anim-2 {
+	opacity: 1;
+	-webkit-animation: mytwo 0.3s; 
+    animation: mytwo 0.3s;
+}
+@-webkit-keyframes mytwo {
+    from {opacity: 0;
+    	bottom: 40px;
+		left: 39px;
+		-webkit-transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-45deg);}
+    to {opacity: 1;
+    	bottom: 80px;
+		left: 0px;
+		-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+}
+
+.collec-link {
+	bottom: 120px;
+	left: 39px;
+	opacity: 0;
+}
+.anim-3 {
+	opacity: 1;
+	-webkit-animation: mythree 0.3s;
+    animation: mythree 0.3s;
+}
+@-webkit-keyframes mythree {
+    from {opacity: 0;
+    	bottom: 80px;
+		left: 0px;
+		-webkit-transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-45deg);}
+    to {opacity: 1;
+    	bottom: 120px;
+		left: 39px;
+		-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+}
+
+.grid-link {
+	bottom: 160px;
+	opacity: 0;
+}
+.anim-4 {
+	opacity: 1;
+	-webkit-animation: myfour 0.3s;
+    animation: myfour 0.3s;
+}
+@-webkit-keyframes myfour {
+    from {opacity: 0;
+    	bottom: 120px;
+		left: 39px;
+		-webkit-transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-45deg);}
+    to {opacity: 1;
+    	bottom: 160px;
+		left: 0px;
+		-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+}
+
+.login-link {
+	bottom: 200px;
+	left: 39px;
+	opacity: 0;
+}
+.anim-5 {
+	opacity: 1;
+	-webkit-animation: myfive 0.3s;
+    animation: myfive 0.3s;
+}
+@-webkit-keyframes myfive {
+    from {opacity: 0;
+    	bottom: 160px;
+		left: 0px;
+		-webkit-transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-45deg);}
+    to {opacity: 1;
+    	bottom: 200px;
+		left: 39px;
+		-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+}
+
+.map-link {
+	bottom: 240px;
+	opacity: 0;
+}
+.anim-6 {
+	opacity: 1;
+	-webkit-animation: mysix 0.3s;
+    animation: mysix 0.3s;
+}
+@-webkit-keyframes mysix {
+    from {opacity: 0;
+    	bottom: 200px;
+		left: 39px;
+		-webkit-transform: rotateX(-180deg) rotateY(-180deg) rotateZ(-45deg);}
+    to {opacity: 1;
+    	bottom: 240px;
+		left: 0px;
+		-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(45deg);}
+}
+
+.ico-bo {
+	background: url("../img/ico-bo.jpg");
+	width: 28px;
+	height: 28px;
+	margin: 12px;
+}
+.menu-link a:hover .ico-bo {
+	background: url("../img/ico-bo-whi.png");
+}
+.ico-fs {
+	background: url("../img/ico-fs.jpg");
+	width: 33px;
+	height: 33px;
+	margin: 9px;
+}
+.menu-link a:hover .ico-fs {
+	background: url("../img/ico-fs-whi.png");
+}
+.ico-login {
+	background: url("../img/ico-login.jpg");
+	width: 18px;
+	height: 18px;
+	margin: 16px;
+}
+.menu-link a:hover .ico-login {
+	background: url("../img/ico-login-whi.png");
+}
+.ico-collec {
+	background: url("../img/ico-collec.jpg");
+	width: 26px;
+	height: 26px;
+	margin: 12px;
+}
+.menu-link a:hover .ico-collec {
+	background: url("../img/ico-collec-whi.png");
+}
+.ico-grid {
+	background: url("../img/ico-grid.jpg");
+	width: 24px;
+	height: 24px;
+	margin: 13px;
+}
+.menu-link a:hover .ico-grid {
+	background: url("../img/ico-grid-whi.png");
+}
+.ico-map {
+	background: url("../img/ico-map.jpg");
+	width: 23px;
+	height: 24px;
+	margin: 14px;
+}
+.menu-link a:hover .ico-map {
+	background: url("../img/ico-map-whi.png");
+}

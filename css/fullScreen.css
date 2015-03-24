@@ -1,0 +1,296 @@
+*{ 
+    font-family: sans-serif; margin: 0; padding: 0; list-style-type: none; }
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.description{
+    width: 810px;
+    margin: auto;   
+    position: absolute;
+    top: 45%;
+    left: 23%;
+    font-style: italic;
+    display: block;
+    z-index: 99999999999;
+}
+
+.description h1{
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 50px;
+    padding-top: 25px;
+    text-shadow: 1px 1px 2px #4A4A4A ;
+    opacity: 0;
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+.description ul{
+    width: 70%;
+    margin: auto;
+    
+    font-size: 18px;
+    color: #666565;
+    opacity: 0;
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+.description ul li.left{
+    float: left;
+    font-weight: bold;
+}
+
+.description ul li.right{
+    float: right;
+    font-weight: 100;
+}
+
+.info{
+    width: 50px;
+    height: 50px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    position: fixed;
+    top: 90%;
+    left: 1%;
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    line-height: 55px;
+}
+
+
+/* Carré */
+.carreP1{
+    width: 169px;
+    height: 169px;
+    background: #e1e0d4;
+    position: absolute;
+    z-index: 1;
+    top: 42%;
+    left: 25%;
+    transform : rotate(45deg);
+    opacity: 0;
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP2{
+    width: 169px;
+    height: 169px;
+    background: #e6e3be;
+    position: absolute;
+    z-index: 1;
+    top: 42%;
+    left: 67%;
+    transform : rotate(45deg);
+    opacity: 0;
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP3{
+    width: 129px;
+    height: 129px;
+    background: #f0ebad;
+    position: absolute;
+    z-index: 1;
+    top: 34%;
+    left: 50%;
+    transform : rotate(45deg);
+    opacity: 0;
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP4{
+    width: 129px;
+    height: 129px;
+    background: #f0ebad;
+    position: absolute;
+    z-index: 1;
+    top: 26%;
+    left: 35.5%;
+    transform : rotate(45deg);
+    opacity: 0;
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP5{
+    width: 100px;
+    height: 100px;
+    background: #f0ebad;
+    position: absolute;
+    z-index: 1;
+    top: 67%;
+    left: 54%;
+    transform : rotate(45deg);
+    opacity: 0;
+
+
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP6{
+    width: 170px;
+    height: 170px;
+    background: #ede46b;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 32%;
+    transform : rotate(45deg);
+    opacity: 0;
+
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP7{
+    width: 170px;
+    height: 170px;
+    background: #ede46b;
+    position: absolute;
+    z-index: 2;
+    top: 37%;
+    left: 58%;
+    transform : rotate(45deg);
+    opacity: 0;
+
+    
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s ease-out;
+    -webkit-animation-timing-function: ease-out;
+}
+.carreP8{
+    width: 242px;
+    height: 242px;
+    background: #ddd011;
+    position: absolute;
+    z-index: 1;
+    top: 38%;
+    left: 41%;
+    transform : rotate(45deg);
+    opacity: 0;
+ 
+    animation: carre 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: carre 3s;
+    -webkit-animation-timing-function: ease-out;
+}
+.traitP1{
+    width: 1px;
+    height: 325px;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: -10%;
+    left: 36%;
+    border-bottom: 325px solid #fff;
+    transform : rotate(45deg);
+    opacity: 0;
+    
+    animation: traitP1 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: traitP1 3s;
+    -webkit-animation-timing-function: ease-out;
+}
+.traitP2{
+    width: 1px;
+    height: 325px;
+    background: #bcb319;
+    position: absolute;
+    top: 22%;
+    left: 61%;
+    border-bottom: 325px solid #bcb319;
+    transform : rotate(45deg);
+    opacity: 0;
+    
+    animation: traitP2 3s;
+    animation-timing-function: ease-out;
+    -webkit-animation: traitP2 3s;
+    -webkit-animation-timing-function: ease-out;
+}
+
+/* Standard syntax */
+@keyframes carre {
+    0%   {opacity: 0; top: 45%; left: 45%;}
+    25%  {opacity: 1;}
+    50%  {opacity: 1;}
+    75%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes carre {
+    0%   {opacity: 0; top: 45%; left: 45%;}
+    25%  {opacity: 1;}
+    50%  {opacity: 1;}
+    75%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes traitP1 {
+    0%   {opacity: 0; height: 0px; left: 0%;}
+    25%  {opacity: 1;}
+    50%  {opacity: 1;}
+    75%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes traitP1 {
+    0%   {opacity: 0; height: 0px; left: 0%;}
+    25%  {opacity: 1;}
+    50%  {opacity: 1;}
+    75%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes traitP2 {
+    0%   {opacity: 0; height: 0px; left: 100%;}
+    25%  {opacity: 1;}
+    50%  {opacity: 1;}
+    75%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+@-webkit-keyframes traitP2 {
+    0%   {opacity: 0; height: 0px; left: 100%;}
+    25%  {opacity: 1;}
+    50%  {opacity: 1;}
+    75%  {opacity: 1;}
+    100% {opacity: 0;}
+}

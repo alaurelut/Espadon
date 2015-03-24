@@ -1,0 +1,140 @@
+.about-title {
+	color: #cd2727;
+	text-align: center;
+  	font-size: 48px;
+  	margin-top: 30px;
+}
+
+.about-title2 {
+	color: #636363;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 80px;
+}
+
+hr {
+	color: #cd2727;
+	background-color: #cd2727;
+	height: 1px;
+	border: 0;
+	margin-top: 30px;
+	width: 50px;
+}
+
+.about-txt {
+	font-size: 18px;
+	color: #636363;
+	width: 660px;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 25px;
+	margin-top: 30px;
+}
+.nb-1 {
+	width: auto;
+	text-align: center;
+}
+.nb-2 {
+	width: 240px;
+}
+.nb-3 {
+	width: 380px;
+}
+.nb-4 {
+	width: 520px;
+}
+.nb-5 {
+	width: 660px;
+}
+
+.about-list {
+	margin: 50px auto;
+}
+
+.about-list li {
+	display: inline-block;
+	margin-right: 35px;
+}
+.about-list li:last-child {
+	margin-right: 0;
+}
+
+.img-container {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 2px solid #cd2727;
+}
+.img-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.about-name {
+	text-align: center;
+	color: #636363;
+	font-size: 18px;
+	margin-top: 20px;
+}
+
+.about-job {
+	font-size: 14px;
+	color: #cd2727;
+	margin-top: 10px;
+}
+
+.about-link {
+	background: url("../img/about-flickr-gra-s.png") no-repeat 20px 0px;
+	display: block;
+	text-align: center;
+	color: #2883a5;
+	font-size: 14px;
+	font-style: italic;
+  	line-height: 18px;
+  	margin-top: 6px;
+  	padding-left: 10px;
+}
+
+.footer {
+	background-color: rgba(205, 39, 39, 0.9);
+}
+.footer ul {
+	width: 270px;
+	margin: 0 auto;
+	padding-top: 15px;
+}
+.footer ul li {
+	margin-right: 25px;
+	display: inline-block;
+}
+.footer ul li:last-child {
+	margin-right: 0px;
+}
+.about-social {
+	display: block;
+	height: 70px;
+	width: 70px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+}
+.about-social img {
+	margin: 15px auto;
+	display: block;
+}
+
+
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -100px; 
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+.footer, .wrapper:after {
+  height: 100px; 
+}

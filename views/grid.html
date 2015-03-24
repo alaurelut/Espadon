@@ -1,0 +1,42 @@
+<div ng-switch="isLoading">
+
+    <!-- BEGIN: Loading View. -->
+    <p ng-switch-when="true">
+        <img src="img/loader.gif" style="margin:0 auto">
+    </p>
+    <!-- END: Loading View. -->
+
+    <!-- BEGIN: Results View. -->
+    <div
+        ng-switch-when="false"
+        ng-switch="isSuccessful">
+
+        <p ng-switch-when="true">
+
+          Album : 
+          <ul ng-repeat="album in albums" class="diamonds">
+            <h1>Album :</h1>
+
+              <li ng-repeat="photo in album.photoset.photo">
+                <a ng-href="#/fullscreen/{{photo.id}}" class="diamond">
+                  <div class="filter"></div>
+                  <div class="content" ng-style="{'background-image':'url(https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_m.jpg)'}">
+                    <!-- <img ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}.jpg"> -->
+                  </div>
+                </a>
+              </li>
+
+          </ul>
+
+        </p>
+
+        <p ng-switch-when="false">
+
+            <strong>Oops</strong>: One of your images failed to load :(
+
+        </p>
+
+    </div>
+    <!-- END: Results View. -->
+
+</div>
